@@ -9,22 +9,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AppUser {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
+    private String username;
     private String fullName;
     @Embedded
     private Address address;
     private String photo;
-    private UserType userType;
+    private String userType;
     @Email
     private String email;
     private String password;

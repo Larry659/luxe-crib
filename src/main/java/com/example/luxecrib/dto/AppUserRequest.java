@@ -15,9 +15,10 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AppUserRequest {
     private String fullName;
+    private String username;
     private Address address;
     private String photo;
-    private UserType userType;
+    private String userType;
     private String email;
     private String password;
     private String phoneNumber;

@@ -4,6 +4,7 @@ import com.example.luxecrib.helper.Address;
 import com.example.luxecrib.helper.Guarantor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +24,6 @@ public class Owner {
     private Boolean stayIn;
     @Embedded
     private Address address;
-    @OneToMany()
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner", cascade = CascadeType.ALL)
 private List<Property> propertyList;
 }

@@ -4,6 +4,7 @@ import com.example.luxecrib.enums.HouseType;
 import com.example.luxecrib.helper.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,10 +14,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer propertyId;
     private String description;
     @Embedded
     private Address address;
@@ -26,6 +28,7 @@ public class Property {
     private Boolean forLease;
     private Boolean forSale;
     private Double amount;
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ownerId")
     private Owner owner;
 }

@@ -3,6 +3,7 @@ package com.example.luxecrib.enums;
 public enum UserType {
 
     OWNER("owner"),
+    AGENT("agent"),
     OCCUPANT("occupant");
 
 

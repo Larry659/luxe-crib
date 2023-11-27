@@ -1,31 +1,23 @@
-package com.example.luxecrib.model;
+package com.example.luxecrib.dto;
 
 import com.example.luxecrib.enums.UserType;
 import com.example.luxecrib.helper.Address;
-import jakarta.persistence.*;
+import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AppUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userId;
+public class AppUserRequest {
     private String fullName;
-    @Embedded
     private Address address;
     private String photo;
     private UserType userType;
-    @Email
     private String email;
     private String password;
     private String phoneNumber;

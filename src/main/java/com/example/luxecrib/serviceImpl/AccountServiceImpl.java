@@ -1,13 +1,15 @@
 package com.example.luxecrib.serviceImpl;
 
 import com.example.luxecrib.dto.ApiResponse;
-import com.example.luxecrib.dto.AppUserRequest;
+import com.example.luxecrib.dto.AccountRequest;
 import com.example.luxecrib.exception.DuplicateRecordException;
+import com.example.luxecrib.mapper.AppMapper;
 import com.example.luxecrib.model.Account;
 import com.example.luxecrib.repository.AccountRepository;
 import com.example.luxecrib.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +24,13 @@ import static com.example.luxecrib.dto.MessageUtil.SUCCESS;
 @Slf4j
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepo;
+   // private final AppMapper appMapper;
     @Override
-    public ResponseEntity<?> addAppUser(AppUserRequest payload) {
+    public ResponseEntity<?> addAccount(AccountRequest payload) {
        Optional<Account> accountCheck = accountRepo.findAccountByEmail(payload.getEmail());
         if(accountCheck.isEmpty()){
-            Account account= new Account();
+          // Account account= appMapper.convertToAccount(payload);
+            Account account = new Account();
             account.setFullName(payload.getFullName());
             account.setEmail(payload.getEmail());
             account.setPassword(payload.getPassword());
@@ -44,7 +48,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public ApiResponse<?> updateAppUser(Integer id,AppUserRequest payload) {
+    public ApiResponse<?> updateAppUser(Integer id, AccountRequest payload) {
         Account acct = accountRepo.findById(id).get();
         if(Objects.nonNull(acct.getFullName()) && !"".equalsIgnoreCase(acct.getFullName())){
             acct.setFullName(payload.getFullName());

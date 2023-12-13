@@ -1,9 +1,6 @@
 package com.example.luxecrib.dto;
 
-import com.example.luxecrib.enums.UserType;
 import com.example.luxecrib.helper.Address;
-import jakarta.persistence.Embedded;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AppUserRequest {
+public class AccountRequest {
     private String fullName;
     private String username;
     private Address address;

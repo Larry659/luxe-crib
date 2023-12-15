@@ -2,6 +2,8 @@ package com.example.luxecrib.route;
 
 
 import com.example.luxecrib.dto.AccountRequest;
+import com.example.luxecrib.dto.AccountResponse;
+import com.example.luxecrib.dto.ApiResponse;
 import com.example.luxecrib.repository.AccountRepository;
 import com.example.luxecrib.service.AccountService;
 
@@ -29,31 +31,17 @@ public class AccountRoute{
         return accountService.addAccount(payload);
     }
 
-    @GetMapping("")
-    public ResponseEntity getAllAccounts () {
-        return new ResponseEntity( accountRepository.findAll(), HttpStatus.OK);
+    @GetMapping("/list")
+    public ApiResponse<?> getAllAccounts () {
+        return accountService.listAppUser();
     }
-//    @PostMapping("/update")
-//    ApiResponse<?> updateAccount(@RequestParam Long id, @RequestBody AccountRequest payload) {
-//        return accountService.updatedAccount(id,payload);
-//    }
-//    @GetMapping("/fetch")
-//    ApiResponse<?> getAccount() {
-//
-//        return accountService.listAccounts();
-//    }
-//    @DeleteMapping("/delete")
-//    ApiResponse<?> deleteAccount(@RequestParam Long id) {
-//        return accountService.deleteAccount(id);
-//    }
-//
-//    @GetMapping("/count")
-//    ApiResponse<?> getAccountCount() {
-//        return accountService.countAccounts();
-//    }
-//
-//    @GetMapping("/count_month")
-//    ApiResponse<?> getAccountCountForMonth() {
-//        return accountService.countAccountForMonth();
-//    }
+    @PostMapping("/update")
+    ApiResponse<?> updateAccount(@RequestParam Integer id, @RequestBody AccountRequest payload) {
+        return accountService.updateAppUser(id,payload);
+    }
+
+    @DeleteMapping("/delete")
+    ApiResponse<?> deleteAccount(@RequestParam Integer id) {
+        return accountService.deleteAppUser(id);
+    }
 }

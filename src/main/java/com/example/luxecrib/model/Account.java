@@ -9,6 +9,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -22,7 +24,7 @@ public class Account {
     private String fullName;
     @Embedded
     private Address address;
-    private String photo;
+    private byte[] photo;
     private String userType;
     @Email
     private String email;

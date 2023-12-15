@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 
 public interface AccountService {
     ResponseEntity<?> addAccount(AccountRequest payload);
-    ApiResponse<?> updateAppUser(Integer id, AccountRequest payload);
+    ApiResponse<AccountRequest> updateAppUser(Integer id, AccountRequest payload);
     ApiResponse<?> listAppUser();
-    ApiResponse<?> deleteAppUser(Long userId);
+    ApiResponse<?> deleteAppUser(Integer userId);
 
 }

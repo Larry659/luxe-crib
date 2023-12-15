@@ -14,7 +14,7 @@ public class AccountRequest {
     private String fullName;
     private String username;
     private Address address;
-    private String photo;
+    private byte[] photo;
     private String userType;
     private String email;
     private String password;

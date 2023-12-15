@@ -14,10 +14,10 @@ import java.io.Serializable;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable {
-
+    @Column(insertable=false, updatable=false)
     private String state;
-
+    @Column(insertable=false, updatable=false)
     private String city;
-
+    @Column(insertable=false, updatable=false)
     private String street;
 }

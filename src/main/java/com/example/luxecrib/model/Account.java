@@ -22,10 +22,12 @@ public class Account {
     private Integer userId;
     private String username;
     private String fullName;
+    private String occupation;
     @Embedded
     private Address address;
     private byte[] photo;
     private String userType;
+    private Boolean isMarried;
     @Email
     private String email;
     private String password;

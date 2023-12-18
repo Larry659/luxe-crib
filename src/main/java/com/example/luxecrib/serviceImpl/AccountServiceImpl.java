@@ -1,8 +1,8 @@
 package com.example.luxecrib.serviceImpl;
 
-import com.example.luxecrib.dto.AccountResponse;
+import com.example.luxecrib.dto.response.AccountResponse;
 import com.example.luxecrib.dto.ApiResponse;
-import com.example.luxecrib.dto.AccountRequest;
+import com.example.luxecrib.dto.request.AccountRequest;
 import com.example.luxecrib.exception.DuplicateRecordException;
 import com.example.luxecrib.exception.RecordNotFoundException;
 import com.example.luxecrib.mapper.Mapper;
@@ -11,7 +11,6 @@ import com.example.luxecrib.repository.AccountRepository;
 import com.example.luxecrib.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

@@ -12,6 +12,9 @@ import java.io.Serializable;
 
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable {
     @Column(insertable=false, updatable=false)

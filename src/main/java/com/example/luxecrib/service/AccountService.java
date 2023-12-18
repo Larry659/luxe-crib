@@ -1,7 +1,7 @@
 package com.example.luxecrib.service;
 
 import com.example.luxecrib.dto.ApiResponse;
-import com.example.luxecrib.dto.AccountRequest;
+import com.example.luxecrib.dto.request.AccountRequest;
 import org.springframework.http.ResponseEntity;
 
 public interface AccountService {

@@ -1,15 +1,12 @@
 package com.example.luxecrib.route;
 
 
-import com.example.luxecrib.dto.AccountRequest;
-import com.example.luxecrib.dto.AccountResponse;
+import com.example.luxecrib.dto.request.AccountRequest;
 import com.example.luxecrib.dto.ApiResponse;
 import com.example.luxecrib.repository.AccountRepository;
 import com.example.luxecrib.service.AccountService;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

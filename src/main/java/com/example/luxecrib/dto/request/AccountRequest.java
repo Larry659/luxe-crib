@@ -1,4 +1,4 @@
-package com.example.luxecrib.dto;
+package com.example.luxecrib.dto.request;
 
 import com.example.luxecrib.helper.Address;
 import lombok.AllArgsConstructor;

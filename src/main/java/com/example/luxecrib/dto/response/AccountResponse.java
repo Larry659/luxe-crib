@@ -1,4 +1,4 @@
-package com.example.luxecrib.dto;
+package com.example.luxecrib.dto.response;
 
 import com.example.luxecrib.helper.Address;
 import jakarta.persistence.Embedded;

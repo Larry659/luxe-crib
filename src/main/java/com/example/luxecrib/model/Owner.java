@@ -16,7 +16,7 @@ import java.util.List;
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer ownerId;
+    private Integer id;
 
    @Embedded
     private Guarantor guarantor;
